@@ -30,6 +30,7 @@
 .card {
   margin: 20px;
   padding: 20px;
+  min-width: 300px;
 }
 input {
   padding: 20px;

@@ -9,6 +9,7 @@ import {
   NavLink
 } from "mdbreact";
 import { BrowserRouter as Router } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class NavbarFeatures extends Component {
   constructor(props) {

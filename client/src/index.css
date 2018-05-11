@@ -3,3 +3,6 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+.card {
+  min-width: 300px !important;
+}

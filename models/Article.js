@@ -14,7 +14,6 @@ const articleSchema = new Schema({
     type: String,
     required: true
   },
-
   dateAccessed: {
     type: Date,
     default: Date.now
