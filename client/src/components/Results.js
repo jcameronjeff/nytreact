@@ -1,5 +1,5 @@
 import React from "react";
-import {ListGroup, ListGroupItem} from "mdbreact";
+import { Card } from "mdbreact";
 
 const Results = props => (
   <section>
@@ -7,18 +7,24 @@ const Results = props => (
       <div className="panel-heading">
         <h3 className="panel-title text-center">Article Results</h3>
       </div>
-      <ListGroup>
-        {!props.articles.length
-          ? (
-            <h1>Enter a Search to Begin</h1>
-          )
-          : (props.articles.map((thisArticle, i) => {
+      <div className="card-deck">
+        {!props.articles.length ? (
+          <h1>Enter a Search to Begin</h1>
+        ) : (
+          props.articles.map((thisArticle, i) => {
             while (i < 20) {
               return (
-                <ListGroupItem id={"article" + i} key={thisArticle._id} className="article">
-                  <h1 name="title">{thisArticle.headline.main}</h1>
-                  <p name="date">{thisArticle.pub_date}</p>
-                  <p name="snippet">{thisArticle.snippet}</p>
+                <Card
+                  id={"article" + i}
+                  key={thisArticle._id}
+                  className="article"
+                  style={props.cardStyle}
+                >
+                  <h1 className="card-title" name="title">
+                    {thisArticle.headline.main}
+                  </h1>
+                  <h3 name="date">{thisArticle.pub_date}</h3>
+                  <h4 name="snippet">{thisArticle.snippet}</h4>
                   <a name="url" target="_blank" href={thisArticle.web_url}>
                     <button className="btn btn-primary">Read More</button>
                   </a>
@@ -26,17 +32,20 @@ const Results = props => (
                     data-title={thisArticle.headline.main}
                     data-date={thisArticle.pub_date}
                     data-url={thisArticle.web_url}
+                    data-snippet={thisArticle.snippet}
                     type="submit"
                     name="submit"
                     className="articleSave btn btn-success pull-right"
-                    onClick={props.save}>
+                    onClick={props.save}
+                  >
                     Save Article
                   </button>
-                </ListGroupItem>
+                </Card>
               );
             }
-          }))}
-      </ListGroup>
+          })
+        )}
+      </div>
     </div>
   </section>
 );

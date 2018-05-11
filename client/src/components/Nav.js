@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -8,7 +8,7 @@ import {
   NavItem,
   NavLink
 } from "mdbreact";
-import {BrowserRouter as Router} from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 class NavbarFeatures extends Component {
   constructor(props) {
@@ -18,12 +18,8 @@ class NavbarFeatures extends Component {
       isWideEnough: false,
       dropdownOpen: false
     };
-    this.onClick = this
-      .onClick
-      .bind(this);
-    this.toggle = this
-      .toggle
-      .bind(this);
+    this.onClick = this.onClick.bind(this);
+    this.toggle = this.toggle.bind(this);
   }
 
   onClick() {
@@ -45,18 +41,16 @@ class NavbarFeatures extends Component {
           <NavbarBrand href="/https://www.jcameronjeff.io">
             <strong>JeffCameron.io</strong>
           </NavbarBrand>
-          {!this.state.isWideEnough && <NavbarToggler onClick={this.onClick}/>}
+          {!this.state.isWideEnough && <NavbarToggler onClick={this.onClick} />}
           <Collapse isOpen={this.state.collapse} navbar>
             <NavbarNav left>
               <NavItem active>
                 <NavLink to="/">Home</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/api/saved">Saved</NavLink>
+                <NavLink to="/saved">Saved</NavLink>
               </NavItem>
-
             </NavbarNav>
-
           </Collapse>
         </Navbar>
       </Router>

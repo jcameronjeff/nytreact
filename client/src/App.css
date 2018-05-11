@@ -17,8 +17,28 @@
 .App-intro {
   font-size: large;
 }
+.App {
+  background-color: #ddfbff;
+  height: 100vh;
+  overflow: scroll;
+}
 
+.jumbotron {
+  background-image: url("https://images.pexels.com/photos/135019/pexels-photo-135019.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  color: white;
+}
+.card {
+  margin: 20px;
+  padding: 20px;
+}
+input {
+  padding: 20px;
+}
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

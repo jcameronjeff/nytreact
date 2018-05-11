@@ -14,12 +14,15 @@ const articleSchema = new Schema({
     type: String,
     required: true
   },
+
   dateAccessed: {
     type: Date,
     default: Date.now
   },
-  snippet: String,
-  required: true
+  snippet: {
+    type: String,
+    required: true
+  }
 });
 
 const Article = mongoose.model("Article", articleSchema);
